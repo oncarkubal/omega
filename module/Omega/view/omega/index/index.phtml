@@ -1,0 +1,26 @@
+Module: Omega
+Controller: index
+Action: index
+<h1>Index = Retrive</h1>
+<a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'create'));?>">Create</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>artist</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($rowset as $row) {?>
+            <tr>
+                <th><?php echo $row['id'];?></th>
+                <th><?php echo $row['artist'];?></th>
+                <th><?php echo $row['title'];?></th>        
+                <th><a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'delete','id'=>$row['id']));?>">Delete</a></th>        
+                <th><a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'update','id'=>$row['id']));?>">Update</a></th>                
+            </tr>    
+        <?php }?>
+    </tbody>
+</table>
+

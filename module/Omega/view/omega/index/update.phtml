@@ -1,0 +1,13 @@
+Module: Omega
+Controller: index
+Action: update
+<hr />
+<?php
+$form = $this -> form;
+$form -> prepare();
+$form -> setAttribute('action',$this -> url('omega/default',array('controller'=>'index','action'=>'update','id'=>$id)));
+$form -> setAttribute('method','post');
+
+echo $this -> form() -> openTag($form);
+echo $this -> formCollection($form);
+echo $this -> form() -> closeTag();
