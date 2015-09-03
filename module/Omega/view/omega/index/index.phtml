@@ -3,12 +3,14 @@ Controller: index
 Action: index
 <h1>Index = Retrive</h1>
 <a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'create'));?>">Create</a>
-<table>
+<table id="example" class="display" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>ID</th>
             <th>artist</th>
             <th>Title</th>
+            <th>Delete</th>
+            <th>Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -18,7 +20,7 @@ Action: index
                 <th><?php echo $row['artist'];?></th>
                 <th><?php echo $row['title'];?></th>        
                 <th><a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'delete','id'=>$row['id']));?>">Delete</a></th>        
-                <th><a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'update','id'=>$row['id']));?>">Update</a></th>                
+                <th><a href="<?php echo $this -> url('omega/default',array('controller'=>'index','action'=>'update','id'=>$row['id']));?>">Edit</a></th>                
             </tr>    
         <?php }?>
     </tbody>

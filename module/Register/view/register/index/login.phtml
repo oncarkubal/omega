@@ -1,0 +1,13 @@
+Module: Register
+Controller: index
+Action: login
+<hr />
+<?php
+$form = $this -> form;
+$form -> prepare();
+$form -> setAttribute('action',$this -> url('register/default',array('controller'=>'index','action'=>'login')));
+$form -> setAttribute('method','post');
+
+echo $this -> form() -> openTag($form);
+echo $this -> formCollection($form);
+echo $this -> form() -> closeTag();
